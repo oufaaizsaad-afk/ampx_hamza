@@ -129,7 +129,8 @@ h2 em { font-size: 1.08em; }
 .hero-mark { position: absolute; z-index: -1; left: -5%; bottom: -24%; width: 25%; opacity: .2; -webkit-mask-image: linear-gradient(to top, #000 30%, transparent 85%); mask-image: linear-gradient(to top, #000 30%, transparent 85%); }
 
 /* Scène : borne et véhicule, avec les cartes en direct */
-.scene { position: absolute; z-index: -1; right: 0; bottom: 0; width: 61.72%; aspect-ratio: 1032 / 851; container-type: inline-size; }
+/* Largeur plafonnée : au-delà, le bloc hero atteint sa hauteur max (940 px) et l'image passerait sous la navigation. */
+.scene { position: absolute; z-index: -1; right: 0; bottom: 0; width: min(61.72%, 1030px); aspect-ratio: 1032 / 851; container-type: inline-size; }
 .scene img {
   display: block; width: 100%; height: 100%; object-fit: cover;
   -webkit-mask-image: linear-gradient(to right, transparent 4.5%, rgba(0,0,0,.45) 8.5%, #000 13.5%), linear-gradient(to bottom, transparent 0, #000 9%);
@@ -438,6 +439,9 @@ h1 em { font-size: 1.1em; letter-spacing: -.03em; }
 .cta-form .btn { justify-content: center; margin-top: 6px; height: 48px; }
 .form-note { font-size: 12.5px; color: #9fa29e; text-align: center; }
 .form-note.err { color: #ffb08f; }
+.form-note.ok { color: var(--lime); }
+.cta-form .btn[disabled] { opacity: .7; cursor: progress; transform: none; }
+.cta-form .btn[disabled] .t { transform: none; }
 
 /* Menu déroulant */
 .field { display: grid; gap: 6px; font-size: 13px; font-weight: 500; color: #dfe1dd; }
