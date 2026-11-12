@@ -1,0 +1,443 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AMPX — Le poste de pilotage de vos bornes de recharge</title>
+  <meta name="description" content="Supervisez, pilotez et contrôlez l'accès à toutes vos bornes de recharge, quelle que soit leur marque, depuis un seul écran.">
+  <meta name="theme-color" content="#f5f5f2">
+  <meta property="og:title" content="AMPX — Le poste de pilotage de vos bornes de recharge">
+  <meta property="og:description" content="Toutes vos bornes. Un seul écran.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@1&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Logo et icônes -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="ampx-mark" viewBox="0 0 525 576"><path fill="#0ae907" fill-rule="evenodd" d="M263 0L287 1L298 4L310 10L323 22L341 54L343 55L344 59L346 60L347 64L349 65L359 85L367 96L370 104L377 113L384 128L391 137L395 147L397 148L411 174L413 175L415 181L423 192L429 205L436 214L439 222L447 233L460 258L468 269L474 282L485 298L488 306L495 315L501 328L505 332L517 355L522 361L525 370L524 383L521 390L514 398L505 403L497 405L449 404L438 399L428 389L416 366L411 360L408 352L406 351L404 345L402 344L397 333L388 320L386 314L378 303L374 293L367 284L360 269L352 258L349 250L341 239L327 212L323 208L316 193L314 192L305 174L297 163L290 148L288 147L280 131L275 125L272 117L268 113L257 129L244 153L240 157L239 161L233 168L231 174L220 189L218 195L209 207L205 216L201 220L191 239L187 243L184 251L173 266L171 272L160 287L155 298L150 303L148 309L144 313L132 335L162 329L173 325L186 323L278 299L288 298L319 289L328 289L332 291L336 296L336 306L324 321L324 323L321 325L321 327L315 332L315 334L304 346L304 348L299 352L299 354L290 363L287 369L278 378L271 389L265 394L265 396L253 409L250 415L231 436L228 442L220 449L217 455L206 466L206 468L187 489L187 491L178 500L178 502L172 507L168 514L161 520L157 527L144 540L144 542L132 554L127 562L114 575L110 576L109 573L114 558L119 549L127 524L130 520L137 498L141 491L143 481L148 472L149 466L151 464L177 392L60 413L51 416L27 417L15 412L6 404L0 391L0 377L5 365L13 355L16 347L20 343L34 317L41 308L43 302L49 295L51 289L63 272L68 261L72 257L88 228L102 208L116 182L120 178L133 154L140 145L142 139L146 135L159 111L165 104L167 98L176 86L178 80L182 76L187 65L191 61L192 57L201 45L204 37L209 32L214 22L223 13L234 6L246 2Z"/></symbol>
+    <symbol id="ampx-word" viewBox="0 0 1101 228"><path fill="currentColor" fill-rule="evenodd" d="M146 0L171 1L181 5L193 15L201 30L203 31L207 41L209 42L212 50L214 51L217 59L219 60L222 68L227 74L230 82L232 83L237 95L243 103L247 113L249 114L253 124L255 125L257 131L263 139L267 149L269 150L273 160L275 161L279 171L285 179L300 208L301 20L305 10L310 5L322 0L343 0L350 2L361 9L371 20L371 22L379 29L379 31L383 34L387 41L413 69L417 76L424 82L429 90L435 95L435 97L441 102L441 104L446 109L448 109L450 105L456 100L456 98L462 93L462 91L467 87L467 85L472 81L472 79L477 75L477 73L484 67L489 59L495 54L495 52L502 46L502 44L508 39L508 37L514 32L514 30L521 24L521 22L535 7L544 2L552 0L574 0L582 3L590 11L594 26L593 225L591 227L535 227L533 224L533 99L524 107L520 114L508 126L508 128L503 132L503 134L498 138L494 145L488 150L484 157L476 164L476 166L466 177L456 182L442 183L430 179L420 170L417 164L410 158L410 156L399 145L399 143L390 134L390 132L384 127L381 121L360 98L360 218L359 225L357 227L305 227L306 221L302 213L300 227L245 227L240 222L218 179L214 178L93 179L84 196L82 197L79 205L74 211L71 219L65 227L1 227L1 222L3 221L13 201L21 190L26 178L28 177L38 157L43 151L47 141L49 140L59 120L68 107L72 97L81 84L85 74L87 73L93 60L98 54L117 18L128 7L132 6L135 3ZM641 0L772 0L791 4L808 12L826 27L838 46L844 68L844 94L838 116L835 119L832 127L824 135L824 137L820 139L814 146L802 152L801 154L782 161L759 164L674 164L673 226L671 228L619 228L617 226L617 28L619 19L625 9L631 4ZM833 0L907 1L963 68L967 67L967 65L981 51L981 49L988 43L988 41L1001 28L1001 26L1007 21L1007 19L1013 14L1013 12L1021 5L1023 1L1099 0L1099 4L1092 10L1092 12L1071 34L1071 36L1057 50L1057 52L1050 58L1050 60L1043 66L1043 68L1035 75L1035 77L1028 83L1028 85L1022 90L1022 92L1005 109L1005 111L1026 134L1026 136L1032 141L1037 149L1044 155L1044 157L1055 168L1055 170L1061 175L1061 177L1066 181L1071 189L1080 197L1084 204L1091 210L1091 212L1100 221L1101 225L1099 227L1024 226L1019 218L1013 213L1013 211L1008 207L1004 200L984 178L984 176L977 170L974 164L963 153L950 167L950 169L943 175L943 177L936 183L931 191L924 197L924 199L919 203L919 205L914 209L914 211L902 223L901 226L885 228L825 227L824 222L829 218L829 216L837 209L837 207L858 185L863 177L871 170L871 168L877 163L877 161L884 155L884 153L893 145L893 143L922 111L918 104L900 85L900 83L889 72L889 70L878 59L878 57L872 52L867 44L859 37L855 30L835 9L835 7L832 5ZM679 53L673 56L674 110L762 110L773 105L781 96L784 85L782 69L774 59L767 55L756 53ZM156 64L150 71L147 79L145 80L143 86L137 94L117 132L193 132L190 123L188 122L173 92L171 91L164 76L162 75L160 69Z"/></symbol>
+    <symbol id="s-eye" viewBox="0 0 24 24"><path d="M12 5C6.500 5 2.700 9.200 1.600 11.200a1.600 1.600 0 0 0 0 1.600C2.700 14.800 6.500 19 12 19s9.300-4.200 10.400-6.200a1.600 1.600 0 0 0 0-1.600C21.300 9.200 17.500 5 12 5zm0 3.300a3.700 3.700 0 1 0 0 7.400 3.700 3.700 0 0 0 0-7.400z"/><circle cx="12" cy="12" r="1.700"/></symbol>
+    <symbol id="s-play" viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm-1.900 5.700a.800.800 0 0 0-1.200.700v7.200a.800.800 0 0 0 1.200.700l6-3.600a.800.800 0 0 0 0-1.400z"/></symbol>
+    <symbol id="s-card" viewBox="0 0 24 24"><path d="M4.500 5h15A2.500 2.500 0 0 1 22 7.500v9a2.500 2.500 0 0 1-2.500 2.500h-15A2.500 2.500 0 0 1 2 16.500v-9A2.500 2.500 0 0 1 4.500 5zM6 8.300a.700.700 0 0 0-.700.700v2a.700.700 0 0 0 .700.700h3a.700.700 0 0 0 .700-.700V9a.700.700 0 0 0-.700-.700zM6 14.300a.750.750 0 0 0 0 1.500h5a.750.750 0 0 0 0-1.500z"/><path fill="none" stroke="var(--cut, #fff)" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.500" d="M14.300 10.200a2.600 2.600 0 0 1 0 3.600M16.600 8.700a4.700 4.700 0 0 1 0 6.600"/></symbol>
+    <symbol id="s-gauge" viewBox="0 0 24 24"><path d="M12 4A10 10 0 0 0 2 14v2.500A1.500 1.500 0 0 0 3.500 18h17a1.500 1.500 0 0 0 1.500-1.500V14A10 10 0 0 0 12 4z"/><path fill="none" stroke="var(--cut, #fff)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.100" d="M12 14.300l3.800-5.100"/><circle cx="12" cy="14.300" r="1.900" fill="var(--cut, #fff)"/></symbol>
+    <symbol id="s-building" viewBox="0 0 24 24"><path d="M5 3h8a2 2 0 0 1 2 2v4h4a2 2 0 0 1 2 2v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V5a2 2 0 0 1 2-2zm1.500 3.500v2h2v-2zm3.500 0v2h2v-2zM6.500 11v2h2v-2zm3.500 0v2h2v-2zm-3.500 4.500v2h2v-2zm3.500 0v2h2v-2zm6.500-3v2h2v-2zm0 3.500v2h2v-2z"/></symbol>
+    <symbol id="s-team" viewBox="0 0 24 24"><circle cx="9" cy="7.500" r="3.700"/><path d="M2 19a7 7 0 0 1 14 0 1 1 0 0 1-1 1H3a1 1 0 0 1-1-1z"/><circle cx="17.300" cy="8.600" r="2.800"/><path d="M17.600 13.200c2.600.400 4.400 2.700 4.400 5.800a1 1 0 0 1-1 1h-3.100a9 9 0 0 0-2.800-6.300 6 6 0 0 1 2.500-.500z"/></symbol>
+    <symbol id="s-tools" viewBox="0 0 24 24"><path d="M14.700 6.300a1 1 0 0 0 0 1.400l1.600 1.600a1 1 0 0 0 1.400 0l3.770-3.770a6 6 0 0 1-7.940 7.940l-6.910 6.910a2.120 2.120 0 0 1-3-3l6.910-6.910a6 6 0 0 1 7.940-7.940z"/></symbol>
+    <symbol id="s-plug" viewBox="0 0 24 24"><path d="M8 2a1 1 0 0 1 1 1v4h6V3a1 1 0 1 1 2 0v4h1a1 1 0 0 1 1 1v3a7 7 0 0 1-6 6.900V21a1 1 0 1 1-2 0v-3.100A7 7 0 0 1 5 11V8a1 1 0 0 1 1-1h1V3a1 1 0 0 1 1-1z"/></symbol>
+    <symbol id="s-lock" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.300" d="M8 10.500V7.500a4 4 0 0 1 8 0v3"/><path d="M6.500 10h11a2.500 2.500 0 0 1 2.500 2.500v6a2.500 2.500 0 0 1-2.500 2.500h-11A2.500 2.500 0 0 1 4 18.500v-6A2.500 2.500 0 0 1 6.500 10zm5.500 3.200a1.600 1.600 0 0 0-.850 2.950v1.350a.850.850 0 0 0 1.700 0v-1.350A1.600 1.600 0 0 0 12 13.200z"/></symbol>
+    <symbol id="s-shield" viewBox="0 0 24 24"><path d="M12.350 2.100l7.500 2.800a1 1 0 0 1 .650.940V11.500c0 4.800-3.300 8.500-8.150 10.300a1 1 0 0 1-.700 0C6.800 20 3.500 16.300 3.500 11.500V5.840a1 1 0 0 1 .650-.940l7.500-2.800a1 1 0 0 1 .700 0z"/><path fill="none" stroke="var(--cut, #fff)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.200" d="M8.400 12.100l2.500 2.500 4.700-5.200"/></symbol>
+    <symbol id="s-station" viewBox="0 0 24 24"><path d="M6 3h7a2 2 0 0 1 2 2v14h.500a1 1 0 0 1 0 2h-12a1 1 0 0 1 0-2H4V5a2 2 0 0 1 2-2zm.800 2.800a.600.600 0 0 0-.600.600v2.700a.600.600 0 0 0 .600.600h5.400a.600.600 0 0 0 .600-.600V6.400a.600.600 0 0 0-.600-.600zm3.500 5.700l-2.300 3.400h1.600l-.500 2.900 2.600-3.800h-1.700z"/><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.900" d="M15 9.500h1.500a2 2 0 0 1 2 2v5a1.500 1.500 0 0 0 3 0V8.200l-2-2.200"/></symbol>
+    <symbol id="s-coin" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path fill="none" stroke="var(--cut, #fff)" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.900" d="M15.200 8.900a4.300 4.300 0 1 0 0 6.200M7.300 10.800h5M7.300 13.200h5"/></symbol>
+    <symbol id="s-roles" viewBox="0 0 24 24"><circle cx="10" cy="7.500" r="3.700"/><path d="M3 19a7 7 0 0 1 11.600-5.300 5.700 5.700 0 0 0-1.500 6.300H4a1 1 0 0 1-1-1z"/><circle cx="18" cy="17.300" r="4.500"/><path fill="none" stroke="var(--cut, #fff)" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.600" d="M16 17.400l1.400 1.400 2.600-2.900"/></symbol>
+    <symbol id="s-spark" viewBox="0 0 24 24"><path stroke="currentColor" stroke-width="1.400" stroke-linejoin="round" d="M9.500 3.500c.600 3.900 2.600 5.900 6.500 6.500-3.900.600-5.900 2.600-6.500 6.500-.600-3.900-2.600-5.900-6.500-6.500 3.900-.600 5.900-2.600 6.500-6.500z"/><path stroke="currentColor" stroke-width="1" stroke-linejoin="round" d="M18 13.500c.300 2 1.200 2.900 3.200 3.200-2 .300-2.900 1.200-3.200 3.200-.300-2-1.200-2.900-3.200-3.200 2-.300 2.900-1.200 3.200-3.200z"/></symbol>
+    <g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+      <symbol id="i-zap" viewBox="0 0 24 24"><path d="M13 2.5 4.5 14H11l-1 7.5L18.5 10H12z"/></symbol>
+      <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5"/></symbol>
+      <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3 4.5 6v5.5c0 4.6 3.1 8 7.5 9.5 4.4-1.500 7.5-4.900 7.5-9.500V6z"/><path d="m8.800 12 2.300 2.300 4.200-4.400"/></symbol>
+      <symbol id="i-swap" viewBox="0 0 24 24"><path d="M4 8h15l-3.500-3.500M20 16H5l3.500 3.500"/></symbol>
+      <symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="10.500" width="14" height="10" rx="2.500"/><path d="M8 10.500V8a4 4 0 0 1 8 0v2.500M12 14.500v2"/></symbol>
+      <symbol id="i-unlock" viewBox="0 0 24 24"><rect x="5" y="10.500" width="14" height="10" rx="2.500"/><path d="M8 10.500V8a4 4 0 0 1 7.600-1.700"/></symbol>
+      <symbol id="i-station" viewBox="0 0 24 24"><rect x="4" y="3" width="10" height="18" rx="2.500"/><path d="M7 6.500h4M9.700 10l-1.700 3.200h2.600L8.900 16.500M14 9h2a2 2 0 0 1 2 2v5a1.500 1.500 0 0 0 3 0V8.500L18.700 6"/></symbol>
+      <symbol id="i-building" viewBox="0 0 24 24"><path d="M4 21V5.500A1.500 1.500 0 0 1 5.500 4h7A1.500 1.500 0 0 1 14 5.500V21M14 10h4.500a1.500 1.500 0 0 1 1.500 1.500V21M2.500 21h19M7.500 8h3M7.500 12h3M7.500 16h3"/></symbol>
+      <symbol id="i-wrench" viewBox="0 0 24 24"><path d="M14.700 6.300a1 1 0 0 0 0 1.400l1.600 1.600a1 1 0 0 0 1.400 0l3.770-3.770a6 6 0 0 1-7.940 7.940l-6.910 6.910a2.120 2.120 0 0 1-3-3l6.910-6.910a6 6 0 0 1 7.940-7.940z"/></symbol>
+      <symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.500"/><path d="M2.500 20a6.500 6.500 0 0 1 13 0M16 4.600a3.500 3.500 0 0 1 0 6.800M18 14.200a6.500 6.500 0 0 1 3.500 5.800"/></symbol>
+      <symbol id="i-receipt" viewBox="0 0 24 24"><path d="M6 3h12v18l-3-2-3 2-3-2-3 2zM9.500 8h5M9.500 12h5"/></symbol>
+      <symbol id="i-sparkles" viewBox="0 0 24 24"><path d="M10.500 4.500 12.300 9.700l5.200 1.800-5.200 1.800-1.800 5.200-1.800-5.200-5.200-1.800 5.200-1.800zM19 3v4M17 5h4M19 16.500v3.500M17.300 18.200h3.400"/></symbol>
+      <symbol id="i-play" viewBox="0 0 24 24"><path d="M7.500 5v14l11-7z"/></symbol>
+      <symbol id="i-stop" viewBox="0 0 24 24"><rect x="6" y="6" width="12" height="12" rx="2.500"/></symbol>
+      <symbol id="i-refresh" viewBox="0 0 24 24"><path d="M20 12a8 8 0 0 1-14 5.300M4 12a8 8 0 0 1 14-5.300M18 3v4h-4M6 21v-4h4"/></symbol>
+      <symbol id="i-chevron" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol>
+      <symbol id="i-alert" viewBox="0 0 24 24"><path d="M12 4 2.800 19.500h18.400zM12 10v4.500M12 17.200v.1"/></symbol>
+    </g>
+  </svg>
+
+  <a class="skip" href="#contenu">Aller au contenu</a>
+
+  <!-- Navigation -->
+  <header class="nav" id="nav">
+    <a class="brand" href="#top" aria-label="AMPX, accueil">
+      <svg class="logo-mark" viewBox="0 0 525 576" aria-hidden="true"><use href="#ampx-mark"/></svg>
+      <i class="logo-bar" aria-hidden="true"></i>
+      <svg class="logo-word" viewBox="0 0 1101 228" aria-hidden="true"><use href="#ampx-word"/></svg>
+    </a>
+    <nav class="nav-links" id="nav-links" aria-label="Navigation principale">
+      <a href="#produit">Produit</a>
+      <a href="#etapes">Comment ça marche</a>
+      <a href="#a-venir">À venir</a>
+      <a class="only-mobile" href="#demo">Demander une démo</a>
+    </nav>
+    <a class="btn btn-dark nav-cta" href="#demo"><span class="t" data-t="Demander une démo">Demander une démo</span></a>
+    <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Ouvrir le menu">
+      <span></span><span></span>
+    </button>
+  </header>
+
+  <main id="contenu">
+    <!-- Hero -->
+    <section class="hero" id="top">
+      <div class="hero-card">
+        <svg class="hero-mark" viewBox="0 0 525 576" aria-hidden="true"><use href="#ampx-mark"/></svg>
+
+        <div class="scene" aria-hidden="true">
+          <img src="assets/hero-scene.webp" alt="" width="1032" height="851" fetchpriority="high">
+          <div class="stat st-1">
+            <small><svg class="ico"><use href="#i-zap"/></svg>Puissance en direct</small>
+            <strong><span class="kw-live">86,4</span> kW</strong>
+            <svg class="st-spark" viewBox="0 0 120 40" preserveAspectRatio="none"><path class="area" d="M0 34C14 34 16 26 28 27s14 5 26 0 14-12 26-11 14-2 22-9 12-5 18-5V40H0Z"/><path class="ln" d="M0 34C14 34 16 26 28 27s14 5 26 0 14-12 26-11 14-2 22-9 12-5 18-5"/></svg>
+          </div>
+          <div class="stat st-2"><small>Sessions en cours</small><strong>9</strong></div>
+          <div class="stat st-3"><small>Bornes en ligne</small><strong>24<sub>/26</sub><i class="dot-live"></i></strong></div>
+          <div class="stat st-4"><small>Énergie (24 h)</small><strong>349 kWh</strong></div>
+          <div class="stat st-5"><small>Partage de puissance</small><strong>Actif<i class="switch"></i></strong></div>
+        </div>
+
+        <div class="hero-copy">
+          <p class="chip chip-soft"><svg class="ico"><use href="#i-zap"/></svg>Toutes marques de bornes</p>
+          <h1>Toutes vos bornes.<span class="g">Un seul <em>écran.</em></span></h1>
+          <p class="lead">AMPX est le poste de pilotage de vos bornes de recharge&nbsp;: supervisez, pilotez et contrôlez l'accès, quelle que soit leur marque.</p>
+          <div class="cta-row">
+            <a class="btn btn-dark" href="#demo"><span class="t" data-t="Demander une démo">Demander une démo</span></a>
+            <a class="btn btn-line" href="#produit"><span class="t" data-t="Découvrir le produit">Découvrir le produit</span></a>
+          </div>
+          <ul class="hero-points">
+            <li><svg viewBox="0 0 24 24"><use href="#s-plug"/></svg>Toutes<br>marques</li>
+            <li><svg viewBox="0 0 24 24"><use href="#s-gauge"/></svg>Puissance<br>partagée</li>
+            <li><svg viewBox="0 0 24 24"><use href="#s-shield"/></svg>Actions<br>vérifiées</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="ticker" aria-hidden="true">
+        <div class="ticker-track">
+          <span>Multi-marques</span><i></i><span>Multi-sites</span><i></i><span>Temps réel</span><i></i><span>Pilotage à distance</span><i></i><span>Partage de puissance</span><i></i><span>Accès maîtrisés</span><i></i><span>Actions vérifiées</span><i></i>
+          <span>Multi-marques</span><i></i><span>Multi-sites</span><i></i><span>Temps réel</span><i></i><span>Pilotage à distance</span><i></i><span>Partage de puissance</span><i></i><span>Accès maîtrisés</span><i></i><span>Actions vérifiées</span><i></i>
+        </div>
+      </div>
+    </section>
+
+    <!-- Le problème -->
+    <section class="statement wrap">
+      <p class="eyebrow reveal"><svg class="ico"><use href="#i-zap"/></svg>Le constat</p>
+      <p class="big" id="big">Des bornes de marques différentes. Des outils constructeurs dispersés. Des pannes découvertes trop tard. Aucune idée de qui consomme quoi. <span class="hl">AMPX réunit tout votre parc sur un seul écran.</span></p>
+    </section>
+
+    <!-- Quatre piliers -->
+    <section class="wrap section" id="produit">
+      <div class="section-head">
+        <p class="eyebrow reveal"><svg class="ico"><use href="#i-zap"/></svg>Le produit</p>
+        <h2 class="reveal">Voir, agir, contrôler, <em>optimiser.</em></h2>
+        <p class="sub reveal">Quatre gestes simples pour exploiter un parc de bornes, sans jongler entre les outils de chaque fabricant.</p>
+      </div>
+
+      <div class="mock-stage reveal">
+        <!-- Maquette produit (illustration) -->
+      <div class="mock" aria-hidden="true">
+        <div class="mock-bar">
+          <span class="mock-brand"><svg viewBox="0 0 525 576"><use href="#ampx-mark"/></svg></span>
+          <span class="mock-tabs"><b>Bornes</b><i>Sites</i><i>Conducteurs &amp; Accès</i><i>Incidents</i></span>
+          <span class="mock-search">Rechercher une borne…</span>
+        </div>
+        <div class="mock-kpis">
+          <div><small>Bornes en ligne</small><strong>24<sub>/26</sub></strong><span class="spark s-up"></span></div>
+          <div><small>En charge</small><strong>9</strong><span class="bars"><i></i><i></i><i></i><i></i><i></i><i></i></span></div>
+          <div><small>Puissance délivrée</small><strong><span class="kw-live">86,4</span><sub> kW</sub></strong><span class="spark s-wave"></span></div>
+          <div class="kpi-alert"><small>À traiter</small><strong>2</strong><span class="tag tag-amber">Incidents ouverts</span></div>
+        </div>
+        <div class="mock-table">
+          <div class="row head"><span>Borne</span><span>Site</span><span>État</span><span>Puissance</span></div>
+          <div class="row"><span><b>Parking Nord · 01</b></span><span>Siège Lyon</span><span><em class="tag tag-green">● En charge</em></span><span class="pw"><i style="--w:78%"></i>11,0 kW</span></div>
+          <div class="row"><span><b>Parking Nord · 02</b></span><span>Siège Lyon</span><span><em class="tag tag-blue">○ Disponible</em></span><span class="pw"><i style="--w:0%"></i>—</span></div>
+          <div class="row"><span><b>Visiteurs · A</b></span><span>Agence Nantes</span><span><em class="tag tag-green">● En charge</em></span><span class="pw"><i style="--w:52%"></i>7,4 kW</span></div>
+          <div class="row"><span><b>Dépôt · 04</b></span><span>Entrepôt Lille</span><span><em class="tag tag-red">✕ Hors ligne</em></span><span class="pw"><i style="--w:0%"></i>—</span></div>
+        </div>
+      </div>
+      </div>
+
+      <div class="bento">
+        <article class="card b-see reveal">
+          <div class="card-copy">
+            <div class="card-top"><span class="glyph"><svg viewBox="0 0 24 24"><use href="#s-eye"/></svg></span><span class="num">01</span></div>
+            <h3>Voir</h3>
+            <p>Sachez à tout moment ce qui répond, ce qui charge et ce qui demande votre attention. Chaque borne, chaque prise, chaque session.</p>
+          </div>
+          <div class="viz viz-grid" aria-hidden="true">
+            <div class="cells" id="cells"></div>
+            <ul class="legend"><li><i class="l-charge"></i>En charge</li><li><i class="l-free"></i>Disponible</li><li><i class="l-off"></i>Hors ligne</li></ul>
+          </div>
+        </article>
+
+        <article class="card b-act reveal" data-delay="1">
+          <div class="card-copy">
+            <div class="card-top"><span class="glyph"><svg viewBox="0 0 24 24"><use href="#s-play"/></svg></span><span class="num">02</span></div>
+            <h3>Agir</h3>
+            <p>Démarrez, arrêtez, redémarrez ou déverrouillez une borne à distance. Sans vous déplacer.</p>
+          </div>
+          <div class="viz viz-cmd" aria-hidden="true">
+            <div class="cmds">
+              <span class="is-on"><svg class="ico"><use href="#i-play"/></svg>Démarrer</span>
+              <span><svg class="ico"><use href="#i-stop"/></svg>Arrêter</span>
+              <span><svg class="ico"><use href="#i-refresh"/></svg>Redémarrer</span>
+              <span><svg class="ico"><use href="#i-unlock"/></svg>Déverrouiller</span>
+            </div>
+            <ol class="steps-live">
+              <li>Commande envoyée</li>
+              <li>La borne a répondu</li>
+              <li>Charge réellement démarrée</li>
+            </ol>
+          </div>
+        </article>
+
+        <article class="card b-ctl reveal">
+          <div class="card-copy">
+            <div class="card-top"><span class="glyph"><svg viewBox="0 0 24 24"><use href="#s-card"/></svg></span><span class="num">03</span></div>
+            <h3>Contrôler</h3>
+            <p>Décidez qui charge, où, quand et combien. Groupes de conducteurs, horaires et plafonds d'énergie : la charge s'arrête d'elle-même au plafond.</p>
+          </div>
+          <div class="viz viz-quota" aria-hidden="true">
+            <div class="ring" style="--p:71"><svg viewBox="0 0 120 120"><circle cx="60" cy="60" r="52"/><circle class="arc" cx="60" cy="60" r="52"/></svg><div><strong>212</strong><small>/ 300 kWh</small></div></div>
+            <div class="sched">
+              <b>Équipe commerciale</b>
+              <div class="days"><span class="on">L</span><span class="on">M</span><span class="on">M</span><span class="on">J</span><span class="on">V</span><span>S</span><span>D</span></div>
+              <small>7 h – 20 h · remise à zéro le 1<sup>er</sup></small>
+            </div>
+          </div>
+        </article>
+
+        <article class="card b-opt reveal" data-delay="1">
+          <div class="card-copy">
+            <div class="card-top"><span class="glyph"><svg viewBox="0 0 24 24"><use href="#s-gauge"/></svg></span><span class="num">04</span></div>
+            <h3>Optimiser <span class="tag tag-lime">Accès anticipé</span></h3>
+            <p>Des incidents clairs plutôt que des alertes en vrac : quoi, où, depuis quand, et si c'est résolu. Et une puissance partagée automatiquement entre vos véhicules.</p>
+          </div>
+          <div class="viz viz-inc" aria-hidden="true">
+            <div class="inc"><span class="inc-ico warn"><svg class="ico"><use href="#i-alert"/></svg></span><div><b>Borne hors ligne</b><small>Dépôt · 04 — Entrepôt Lille</small></div><em class="tag tag-amber">Depuis 2 h</em></div>
+            <div class="inc"><span class="inc-ico warn"><svg class="ico"><use href="#i-alert"/></svg></span><div><b>Prise en défaut</b><small>Visiteurs · A — Agence Nantes</small></div><em class="tag tag-amber">Depuis 35 min</em></div>
+            <div class="inc done"><span class="inc-ico"><svg class="ico"><use href="#i-check"/></svg></span><div><b>Connexion instable</b><small>Parking Nord · 02 — Siège Lyon</small></div><em class="tag tag-green">Résolu</em></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Partage de puissance -->
+    <section class="power-wrap" id="puissance">
+      <div class="power">
+        <div class="power-head">
+          <div>
+            <p class="eyebrow reveal"><svg class="ico"><use href="#i-zap"/></svg>Partage de puissance <span class="tag tag-lime">Accès anticipé</span></p>
+            <h2 class="reveal">Rechargez plus de véhicules, <em>sans dépasser</em> votre abonnement.</h2>
+            <p class="sub reveal">Quand le bâtiment consomme davantage, AMPX réduit d'elle-même la puissance de recharge, puis la rend dès que possible. Rien ne disjoncte, personne n'intervient.</p>
+          </div>
+          <div class="power-live reveal" aria-hidden="true">
+            <div class="live-top"><span class="clock" id="lb-time">08:00</span><span class="state" id="lb-state">Pleine puissance</span></div>
+            <div class="live-nums">
+              <div><small>Bâtiment</small><strong><span id="lb-bat">0</span> kW</strong></div>
+              <div><small>Recharge</small><strong class="g"><span id="lb-ev">0</span> kW</strong></div>
+              <div><small>Marge</small><strong><span id="lb-free">0</span> kW</strong></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="chart reveal" role="img" aria-label="Sur une journée, la puissance de recharge baisse quand la consommation du bâtiment monte, afin que le total reste sous la puissance souscrite.">
+          <svg id="lb-chart" viewBox="0 0 1000 320" preserveAspectRatio="none" aria-hidden="true">
+            <defs>
+              <linearGradient id="g-ev" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0ae907"/><stop offset="1" stop-color="#0ae907" stop-opacity=".55"/></linearGradient>
+              <pattern id="hatch" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="3" height="7" fill="#ff7036"/></pattern>
+              <clipPath id="lb-clip"><rect id="lb-clip-rect" x="0" y="0" width="0" height="320"/></clipPath>
+            </defs>
+            <g class="grid"><path d="M0 80H1000M0 160H1000M0 240H1000"/></g>
+            <g class="dim"><path class="a-bat"/><path class="a-ev"/></g>
+            <g clip-path="url(#lb-clip)"><path class="a-bat"/><path class="a-ev"/><path class="a-over"/><path class="l-raw"/></g>
+            <path class="l-limit" d="M0 128H1000"/>
+            <path class="l-head" id="lb-head" d="M0 0V320"/>
+          </svg>
+          <span class="limit-label">Puissance souscrite · 60 kW</span>
+          <span class="head-dot" id="lb-dot"></span>
+          <div class="hours"><span>06 h</span><span>09 h</span><span>12 h</span><span>15 h</span><span>18 h</span><span>21 h</span><span>24 h</span></div>
+        </div>
+
+        <div class="power-foot">
+          <ul class="legend-dark reveal">
+            <li><i class="k-bat"></i>Consommation du bâtiment</li>
+            <li><i class="k-ev"></i>Recharge pilotée par AMPX</li>
+            <li><i class="k-raw"></i>Sans pilotage</li>
+            <li><i class="k-over"></i>Dépassement évité</li>
+          </ul>
+          <div class="lb-rows reveal" id="lb" aria-hidden="true"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contrôle : split -->
+    <section class="wrap section split">
+      <div class="split-copy">
+        <p class="eyebrow reveal"><svg class="ico"><use href="#i-zap"/></svg>Conducteurs &amp; accès</p>
+        <h2 class="reveal">Chaque conducteur sait ce qu'il peut faire. <em>Vous aussi.</em></h2>
+        <p class="sub reveal">Une fiche par conducteur : ses badges, ses droits, l'origine de chaque accès et sa consommation. Fini les tableurs.</p>
+        <ul class="ticks reveal">
+          <li>Badges et droits par borne, site ou zone</li>
+          <li>Horaires de charge par groupe</li>
+          <li>Plafond d'énergie avec arrêt automatique</li>
+        </ul>
+      </div>
+      <div class="driver reveal" aria-hidden="true">
+        <div class="driver-top">
+          <span class="avatar">CM</span>
+          <div><strong>Camille Martin</strong><small>2 badges · Équipe commerciale</small></div>
+          <em class="tag tag-green">● Actif</em>
+        </div>
+        <div class="driver-stats">
+          <div><small>30 derniers jours</small><strong>212 kWh</strong></div>
+          <div><small>Sessions</small><strong>14</strong></div>
+          <div><small>Plafond</small><strong>71 %</strong></div>
+        </div>
+        <p class="driver-title">Ce qu'il peut faire</p>
+        <ul class="driver-rights">
+          <li><span>Siège Lyon · toutes les bornes</span><small>via Équipe commerciale</small></li>
+          <li><span>Agence Nantes · zone visiteurs</span><small>accès individuel</small></li>
+          <li class="muted"><span>Week-end</span><small>hors horaires</small></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Pour qui -->
+    <section class="wrap section" id="pour-qui">
+      <div class="section-head center">
+        <p class="eyebrow reveal"><svg class="ico"><use href="#i-zap"/></svg>Pour qui</p>
+        <h2 class="reveal">Conçu pour ceux qui font <em>tourner</em> les bornes.</h2>
+      </div>
+      <div class="personas">
+        <article class="persona reveal">
+          <span class="glyph"><svg viewBox="0 0 24 24"><use href="#s-building"/></svg></span>
+          <h3>Propriétaires de parc</h3>
+          <p>Entreprises avec flotte, parkings, hôtels, copropriétés, collectivités. Une vision claire de vos bornes et de qui les utilise.</p>
+          <ul><li>Visibilité complète</li><li>Accès et plafonds maîtrisés</li></ul>
+        </article>
+        <article class="persona persona-dark reveal" data-delay="1">
+          <span class="glyph"><svg viewBox="0 0 24 24"><use href="#s-team"/></svg></span>
+          <h3>Exploitants &amp; mainteneurs</h3>
+          <p>Vous gérez des bornes pour le compte de plusieurs clients. Un seul outil multi-marques, avec des données cloisonnées par organisation.</p>
+          <ul><li>Multi-clients, données séparées</li><li>Diagnostic et actions à distance</li></ul>
+        </article>
+        <article class="persona reveal" data-delay="2">
+          <span class="glyph"><svg viewBox="0 0 24 24"><use href="#s-tools"/></svg></span>
+          <h3>Installateurs</h3>
+          <p>Mettez en service rapidement, vérifiez que tout répond, et dépannez sans retourner sur site.</p>
+          <ul><li>Mise en service guidée</li><li>Configuration à distance</li></ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- Étapes -->
+    <section class="wrap section" id="etapes">
+      <div class="section-head">
+        <p class="eyebrow reveal"><svg class="ico"><use href="#i-zap"/></svg>Comment ça marche</p>
+        <h2 class="reveal">Opérationnel en <em>trois</em> étapes.</h2>
+      </div>
+      <ol class="steps">
+        <li class="step reveal">
+          <div class="step-viz" aria-hidden="true"><div class="orbit"><span class="hub"><svg viewBox="0 0 525 576"><use href="#ampx-mark"/></svg></span><i></i><i></i><i></i><i></i><i></i></div></div>
+          <span class="step-n">1</span>
+          <h3>Connectez vos bornes</h3>
+          <p>La borne se présente, vous l'approuvez. Elle rejoint votre parc, quelle que soit sa marque.</p>
+        </li>
+        <li class="step reveal" data-delay="1">
+          <div class="step-viz" aria-hidden="true"><div class="tree"><b>Siège Lyon</b><span>Parking Nord<i>6 bornes</i></span><span>Visiteurs<i>2 bornes</i></span><span class="add">+ Ajouter une zone</span></div></div>
+          <span class="step-n">2</span>
+          <h3>Organisez sites et conducteurs</h3>
+          <p>Rangez vos bornes par site et par zone. Créez vos groupes, distribuez les badges.</p>
+        </li>
+        <li class="step reveal" data-delay="2">
+          <div class="step-viz" aria-hidden="true"><div class="pulse-card"><span class="tag tag-green">● En charge</span><strong>11,0 kW</strong><div class="wave"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div></div>
+          <span class="step-n">3</span>
+          <h3>Pilotez au quotidien</h3>
+          <p>Suivez les sessions, intervenez à distance et gardez votre réseau en service.</p>
+        </li>
+      </ol>
+    </section>
+
+    <!-- Confiance -->
+    <section class="trust-wrap" id="confiance">
+      <div class="trust">
+        <div class="trust-head">
+          <p class="eyebrow reveal"><svg class="ico"><use href="#i-zap"/></svg>Confiance</p>
+          <h2 class="reveal">Une commande acceptée n'est pas une charge <em>démarrée.</em></h2>
+          <p class="sub reveal">Quand vous lancez une action, AMPX ne se contente pas de la réponse de la borne : elle vérifie que la charge a réellement démarré ou s'est réellement arrêtée.</p>
+        </div>
+        <div class="trust-grid">
+          <div class="t-card reveal"><span class="glyph"><svg viewBox="0 0 24 24"><use href="#s-plug"/></svg></span><h3>Multi-marques</h3><p>Fonctionne avec les bornes des différents fabricants. Vous restez libre de vos choix de matériel.</p></div>
+          <div class="t-card reveal" data-delay="1"><span class="glyph"><svg viewBox="0 0 24 24"><use href="#s-lock"/></svg></span><h3>Données cloisonnées</h3><p>Chaque organisation ne voit et ne pilote que ses propres bornes, conducteurs et sessions.</p></div>
+          <div class="t-card reveal"><span class="glyph"><svg viewBox="0 0 24 24"><use href="#s-shield"/></svg></span><h3>Actions vérifiées</h3><p>Chaque action est suivie jusqu'à son effet réel, puis tracée.</p></div>
+          <div class="t-card reveal" data-delay="1"><span class="glyph"><svg viewBox="0 0 24 24"><use href="#s-station"/></svg></span><h3>Éprouvé sur le terrain</h3><p>Chaque fonction est testée sur bornes virtuelles, puis validée sur bornes réelles.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- À venir -->
+    <section class="wrap section" id="a-venir">
+      <div class="section-head center">
+        <p class="eyebrow reveal"><svg class="ico"><use href="#i-zap"/></svg>Ce qui arrive</p>
+        <h2 class="reveal">La suite se <em>prépare.</em></h2>
+        <p class="sub reveal">Nous construisons AMPX avec nos clients pilotes. Voici les prochains chapitres.</p>
+      </div>
+      <div class="next">
+        <article class="reveal"><div class="next-top"><span class="glyph"><svg viewBox="0 0 24 24"><use href="#s-coin"/></svg></span><span class="soon">Bientôt</span></div><h3>Monétiser vos bornes</h3><p>Définissez le prix de la recharge par borne, par site ou pour tout le parc.</p></article>
+        <article class="reveal" data-delay="1"><div class="next-top"><span class="glyph"><svg viewBox="0 0 24 24"><use href="#s-roles"/></svg></span><span class="soon">Bientôt</span></div><h3>Exploiter à plusieurs</h3><p>Rôles par site, exports et historique des actions pour vos équipes et vos partenaires.</p></article>
+        <article class="reveal" data-delay="2"><div class="next-top"><span class="glyph"><svg viewBox="0 0 24 24"><use href="#s-spark"/></svg></span><span class="soon">Bientôt</span></div><h3>Diagnostic assisté</h3><p>Un assistant qui explique une panne et propose des pistes d'action.</p></article>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="wrap" id="demo">
+      <div class="cta reveal">
+        <div class="cta-glow" aria-hidden="true"></div>
+        <div class="cta-copy">
+          <p class="chip chip-dark"><span class="dot-live"></span>Programme clients pilotes</p>
+          <h2>Reprenez la main sur vos <em>bornes.</em></h2>
+          <p>Parlez-nous de votre parc. Nous vous montrons AMPX sur un cas concret, puis nous établissons un devis selon sa taille.</p>
+          <ul class="cta-ticks"><li>Démonstration personnalisée</li><li>Sur devis, selon la taille du parc</li><li>Accompagnement à la mise en service</li></ul>
+        </div>
+        <form class="cta-form" id="demo-form" novalidate>
+          <label>Nom<input name="nom" autocomplete="name" required></label>
+          <label>E-mail professionnel<input name="email" type="email" autocomplete="email" required></label>
+          <label>Société<input name="societe" autocomplete="organization"></label>
+          <div class="field">
+            <span id="parc-label">Taille du parc</span>
+            <div class="select" id="parc">
+              <button type="button" class="select-btn" aria-haspopup="listbox" aria-expanded="false" aria-labelledby="parc-label parc-value">
+                <span id="parc-value">Moins de 10 bornes</span>
+                <svg class="ico"><use href="#i-chevron"/></svg>
+              </button>
+              <ul class="select-list" role="listbox" tabindex="-1" aria-labelledby="parc-label">
+                <li role="option" aria-selected="true">Moins de 10 bornes</li>
+                <li role="option" aria-selected="false">10 à 50 bornes</li>
+                <li role="option" aria-selected="false">50 à 200 bornes</li>
+                <li role="option" aria-selected="false">Plus de 200 bornes</li>
+              </ul>
+              <input type="hidden" name="parc" value="Moins de 10 bornes">
+            </div>
+          </div>
+          <button class="btn btn-lime" type="submit"><span class="t" data-t="Demander une démo">Demander une démo</span></button>
+          <p class="form-note" id="form-note" role="status">Votre messagerie s'ouvre avec la demande préremplie.</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer wrap">
+    <a class="brand" href="#top" aria-label="AMPX, haut de page">
+      <svg class="logo-mark" viewBox="0 0 525 576" aria-hidden="true"><use href="#ampx-mark"/></svg>
+      <i class="logo-bar" aria-hidden="true"></i>
+      <svg class="logo-word" viewBox="0 0 1101 228" aria-hidden="true"><use href="#ampx-word"/></svg>
+    </a>
+    <p class="foot-tag">Toutes vos bornes. Un seul écran.</p>
+    <nav aria-label="Pied de page"><a href="#produit">Produit</a><a href="#puissance">Partage de puissance</a><a href="#confiance">Confiance</a><a href="#demo">Démo</a></nav>
+    <p class="copy">© <span id="year">2026</span> AMPX. Tous droits réservés.</p>
+  </footer>
+
+  <script src="main.js" defer></script>
+</body>
+</html>
