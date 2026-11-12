@@ -3,7 +3,7 @@
 // Envoi des demandes de démo via Web3Forms (https://web3forms.com).
 // Colle ici la clé d'accès reçue sur contact@ampx.fr. Elle peut être publique :
 // elle permet seulement d'envoyer des messages vers cette adresse.
-const WEB3FORMS_KEY = "";
+const WEB3FORMS_KEY = "9e967d44-04ab-491b-bbef-e360ac8e37a5";
 const CONTACT_EMAIL = "contact@ampx.fr";
 
 const reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
