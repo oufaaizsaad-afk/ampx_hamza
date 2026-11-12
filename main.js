@@ -1,7 +1,10 @@
 // AMPX — site vitrine. Aucune dépendance.
 
-// À renseigner avant mise en ligne : adresse qui reçoit les demandes de démo.
-const CONTACT_EMAIL = "";
+// Envoi des demandes de démo via Web3Forms (https://web3forms.com).
+// Colle ici la clé d'accès reçue sur contact@ampx.fr. Elle peut être publique :
+// elle permet seulement d'envoyer des messages vers cette adresse.
+const WEB3FORMS_KEY = "";
+const CONTACT_EMAIL = "contact@ampx.fr";
 
 const reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
 const $ = (s, r = document) => r.querySelector(s);
@@ -155,11 +158,11 @@ const openSel = (open) => {
   selBtn.setAttribute("aria-expanded", String(open));
   if (open) { setActive(selOpts.findIndex((o) => o.getAttribute("aria-selected") === "true")); selList.focus(); }
 };
-const choose = (i) => {
+const setChoice = (i) => {
   selOpts.forEach((o, k) => o.setAttribute("aria-selected", String(k === i)));
   selValue.textContent = selInput.value = selOpts[i].textContent;
-  openSel(false); selBtn.focus();
 };
+const choose = (i) => { setChoice(i); openSel(false); selBtn.focus(); };
 selBtn.addEventListener("click", () => openSel(!sel.classList.contains("open")));
 selOpts.forEach((o, i) => { o.addEventListener("click", () => choose(i)); o.addEventListener("mousemove", () => setActive(i)); });
 selBtn.addEventListener("keydown", (e) => { if (e.key === "ArrowDown" || e.key === "ArrowUp") { e.preventDefault(); openSel(true); } });
@@ -177,24 +180,77 @@ selList.addEventListener("keydown", (e) => {
 });
 document.addEventListener("click", (e) => { if (!sel.contains(e.target)) openSel(false); });
 
-/* Formulaire de démo : ouvre la messagerie avec la demande préremplie */
+/* Formulaire de démo : envoi direct sur contact@ampx.fr via Web3Forms */
 const form = $("#demo-form");
 const note = $("#form-note");
-form.addEventListener("submit", (e) => {
+const submitBtn = $('button[type="submit"]', form);
+const submitLabel = $(".t", submitBtn);
+const setNote = (text, kind = "") => {
+  note.textContent = text;
+  note.classList.toggle("err", kind === "err");
+  note.classList.toggle("ok", kind === "ok");
+};
+const setSending = (on) => {
+  const label = on ? "Envoi en cours…" : "Demander une démo";
+  submitBtn.disabled = on;
+  submitLabel.textContent = label;
+  submitLabel.dataset.t = label;
+};
+const FAIL = `L'envoi a échoué. Réessayez dans un instant ou écrivez-nous à ${CONTACT_EMAIL}.`;
+
+form.addEventListener("submit", async (e) => {
   e.preventDefault();
+  if (submitBtn.disabled) return;
   const f = form.elements;
   const bad = [f.nom, f.email].filter((el) => !el.value.trim() || !el.checkValidity());
   [f.nom, f.email].forEach((el) => el.classList.toggle("err", bad.includes(el)));
   if (bad.length) {
-    note.textContent = "Renseignez votre nom et un e-mail valide.";
-    note.classList.add("err");
+    setNote("Renseignez votre nom et un e-mail valide.", "err");
     bad[0].focus();
     return;
   }
-  note.classList.remove("err");
-  const body = `Nom : ${f.nom.value}\nE-mail : ${f.email.value}\nSociété : ${f.societe.value || "—"}\nTaille du parc : ${f.parc.value}`;
-  location.href = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent("Demande de démo AMPX")}&body=${encodeURIComponent(body)}`;
-  note.textContent = "Votre messagerie s'ouvre. Envoyez le message pour finaliser la demande.";
+  if (!WEB3FORMS_KEY) {
+    console.warn("AMPX : WEB3FORMS_KEY est vide dans main.js, la demande ne peut pas être envoyée.");
+    setNote(FAIL, "err");
+    return;
+  }
+
+  const nom = f.nom.value.trim(), email = f.email.value.trim(), societe = f.societe.value.trim();
+  const data = {
+    access_key: WEB3FORMS_KEY,
+    subject: `Demande de démo AMPX — ${societe || nom}`,
+    from_name: "Site AMPX",
+    replyto: email,
+    "Nom": nom,
+    "E-mail": email,
+    "Société": societe || "—",
+    "Taille du parc": f.parc.value,
+  };
+  if (f.botcheck.checked) data.botcheck = true;
+
+  setSending(true);
+  setNote("Envoi de votre demande…");
+  const ctrl = new AbortController();
+  const timer = setTimeout(() => ctrl.abort(), 15000);
+  try {
+    const res = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      headers: { "Content-Type": "application/json", Accept: "application/json" },
+      body: JSON.stringify(data),
+      signal: ctrl.signal,
+    });
+    const json = await res.json().catch(() => ({}));
+    if (!res.ok || !json.success) throw new Error(json.message || `HTTP ${res.status}`);
+    form.reset();
+    setChoice(0);
+    setNote("Merci, votre demande est bien envoyée. Nous revenons vers vous très vite.", "ok");
+  } catch (err) {
+    console.error("AMPX : échec de l'envoi du formulaire", err);
+    setNote(FAIL, "err");
+  } finally {
+    clearTimeout(timer);
+    setSending(false);
+  }
 });
 
 $("#year").textContent = new Date().getFullYear();
