@@ -420,8 +420,10 @@
               <input type="hidden" name="parc" value="Moins de 10 bornes">
             </div>
           </div>
+          <!-- Anti-spam : case invisible pour les humains, cochée par les robots -->
+          <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" aria-hidden="true" style="display:none">
           <button class="btn btn-lime" type="submit"><span class="t" data-t="Demander une démo">Demander une démo</span></button>
-          <p class="form-note" id="form-note" role="status">Votre messagerie s'ouvre avec la demande préremplie.</p>
+          <p class="form-note" id="form-note" role="status">Vos coordonnées servent uniquement à organiser la démonstration.</p>
         </form>
       </div>
     </section>
